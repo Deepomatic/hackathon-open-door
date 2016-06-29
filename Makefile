@@ -1,8 +1,10 @@
-install: compile venv
-	sudo sed "s:{DIRECTORY}:${PWD}:" django > /etc/init.d/django
-	sudo chmod +x /etc/init.d/django
-	sudo update-rc.d django defaults
-	sudo service django start
+all: compile venv
+
+install:
+	sed "s:{DIRECTORY}:${PWD}:" django > /etc/init.d/django
+	chmod +x /etc/init.d/django
+	update-rc.d django defaults
+	service django start
 
 venv:
 	sudo apt-get install -y python-pip
