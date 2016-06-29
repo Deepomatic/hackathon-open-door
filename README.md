@@ -1,9 +1,17 @@
-## Installation
+## Goal
 
-Just run:
+The goal of this tutorial is to be able to open the door of our building thanks to our smart-phone. We will use a [Raspberry](https://www.raspberrypi.org/) and some electronics to setup a web server and link it to our intercom. The installation will eventually look like this:
+
+![installation](install.jpg)
+
+## Software installation
+
+Just run the following on your Raspberry:
 ```
 apt-get update
 apt-get install -y make git sudo python g++
+git clone https://github.com/Deepomatic/open-door.git
+cd open-door
 make
 make install
 ```
