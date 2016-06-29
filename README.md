@@ -8,6 +8,8 @@ make
 make install
 ```
 
+This will start a django server that will expose the following URL: [http://localhost/door/open]. To open the door, just visit this URL. Don't forget to password-protect it ! ;-)
+
 ## Raspberry Pi
 
 We use [WiringPi](http://wiringpi.com/) to control the pins of the Raspberry. The mapping between physical pins and WiringPi pin IDs is as follows:
