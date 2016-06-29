@@ -8,7 +8,7 @@ make
 make install
 ```
 
-This will start a django server that will expose the following URL: [http://localhost/door/open]. To open the door, just visit this URL. Don't forget to password-protect it ! ;-)
+This will start a django server that will expose the following URL: [http://localhost/door/open](http://localhost/door/open). To open the door, just visit this URL. Don't forget to password-protect it ! ;-)
 
 ## Raspberry Pi
 
