@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript" src="/static/jquery-3.1.0.min.js"></script>
+<link rel="apple-touch-icon" sizes="96x96" type="image/png" sizes="96x96" href="/static/favicon.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/static/favicon.png" />
+<title>Door</title>
+</head>
+<body><div id="main"><font face=Helvetica size=12>
+Hi there ! The door is open !
+</font>
+</div>
+<script type="text/javascript">
+$.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=silly+cat',function(data,status) {
+    data = JSON.parse(data);
+    var url = data.data.image_url;
+    console.log(url)
+    $('#main').html('<img width=100% src="'+url+'" />')
+},'html');
+</script>
+</body>
+</html>

@@ -1,16 +1,20 @@
-all: compile venv
+all: compile
 
-install:
-	sed "s:{DIRECTORY}:${PWD}:" django > /etc/init.d/django
-	chmod +x /etc/init.d/django
-	update-rc.d django defaults
-	service django start
+install: compile
+	if [ ! -d venv ]; then make libs; fi
+	bash install/install.sh
 
-venv:
-	sudo apt-get install -y python-pip
+libs:
+	apt-get install -y make gcc python-pip nginx sudo
 	pip install virtualenv
 	virtualenv venv
 	bash -c "source venv/bin/activate && pip install -r requirements.txt"
+	pip install -r requirements.txt
 
 compile:
+	if [ ! -d venv ]; then make libs; fi
 	make -C src
+
+clean:
+	rm -rf venv
+	make -C src clean

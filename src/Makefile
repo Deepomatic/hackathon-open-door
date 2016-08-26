@@ -1,8 +1,7 @@
-all: wiringPi
-	g++ open-door.cpp -o open-door -lwiringPi -lpthread
-	chmod +x open-door
-	sudo ln -sf `pwd`/open-door /usr/bin/open-door
+all: open-door.c
+	if [ ! -d wiringPi ]; then git submodule update --init; fi
+	cd wiringPi; ./build;
+	gcc open-door.c -o open-door -lwiringPi -lpthread
 
-wiringPi:
-	git clone git://git.drogon.net/wiringPi
-	cd wiringPi; ./build
+clean:
+	rm -f open-door

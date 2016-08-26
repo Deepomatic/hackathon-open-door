@@ -1,3 +1,4 @@
+from django.template import loader
 from django.http import HttpResponse
 import os
 
@@ -6,4 +7,6 @@ os.system("open-door &")
 
 def index(request):
     os.system("open-door &")
-    return HttpResponse({'done': True}, status = 200)
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render({}, request))
+
