@@ -13,7 +13,7 @@ int main(int argc, char** argv)
     pinMode(0, OUTPUT);
 
     digitalWrite(0, HIGH);
-    usleep(1000);
+    usleep(100000);
     digitalWrite(0, LOW);
 }
 
