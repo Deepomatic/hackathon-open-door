@@ -10,9 +10,9 @@ Hi there ! The door is open !
 </font>
 </div>
 <script type="text/javascript">
-$.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=silly+cat',function(data,status) {
+$.get('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC',function(data,status) {
     data = JSON.parse(data);
-    var url = data.data.image_url;
+    var url = data.data[0].images.original.url;
     console.log(url)
     $('#main').html('<img width=100% src="'+url+'" />')
 },'html');
