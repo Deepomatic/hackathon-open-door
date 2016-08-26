@@ -5,7 +5,7 @@ install: compile
 	bash install/install.sh
 
 libs:
-	apt-get install -y make gcc python-pip nginx sudo
+	apt-get install -y make gcc python-pip python-dev nginx sudo
 	pip install virtualenv
 	virtualenv venv
 	bash -c "source venv/bin/activate && pip install -r requirements.txt"
