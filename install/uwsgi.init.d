@@ -8,12 +8,12 @@
 # Description:       uwsgi server
 ### END INIT INFO
 
-DAEMON=uwsgi
+DAEMON=/usr/local/bin/uwsgi
 DAEMON_ARGS="--emperor /etc/uwsgi/vassals"
 DAEMONUSER=root
 
-PIDNAME=$DAEMON.pid
-LOGFILE=/var/log/$DAEMON.log
+PIDNAME=uwsgi.pid
+LOGFILE=/var/log/uwsgi.log
 
 start() {
   echo 'Starting service' >&2
